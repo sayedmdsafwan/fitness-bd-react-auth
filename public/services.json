@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Monthly Package",
+        "price": 1200,
+        "id": 1,
+        "img": "https://i.ibb.co/TM1f81f/fig-1.jpg",
+        "description": "To get started you need to purchase one month package"
+    },
+    {
+        "name": "6 month Package",
+        "price": 5000,
+        "id": 2,
+        "img": "https://i.ibb.co/M186QCT/fig-3.jpg",
+        "description": "Want to lose weight? get admission on this package"
+    },
+    {
+        "name": "Yearly Package",
+        "price": 9900,
+        "id": 3,
+        "img": "https://i.ibb.co/nwNLmHp/fig-6.jpg",
+        "description": "Want to make your body like superhero? click to get started"
+    }
+]
