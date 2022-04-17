@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Service = ({ service }) => {
     const { name, price, img, description } = service;
+
+    const navigate = useNavigate();
+    const goToCheckout = () => {
+        navigate("/checkout");
+    };
 
     return (
         <div className="card col-md-3 m-4 g-0 shadow-sm">
@@ -12,7 +18,10 @@ const Service = ({ service }) => {
                 <p>
                     <small>Price: ${price}</small>
                 </p>
-                <button className="text-capitalize btn btn-outline-dark w-100">
+                <button
+                    onClick={goToCheckout}
+                    className="text-capitalize btn btn-outline-dark w-100"
+                >
                     Buy this package
                 </button>
             </div>
