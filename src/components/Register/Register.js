@@ -1,8 +1,20 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import gitLogo from "../../images/remove-git.png";
+import googleLogo from "../../images/remove-google.png";
+import {
+    useSignInWithGithub,
+    useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Register = () => {
+    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
+        useSignInWithGoogle(auth);
+
+    const [signInWithGithub, userGit, loadingGit, errorGit] =
+        useSignInWithGithub(auth);
     return (
         <div>
             <div
@@ -32,6 +44,38 @@ const Register = () => {
                         type="submit"
                     >
                         Submit
+                    </Button>
+                    <Button
+                        onClick={() => signInWithGoogle()}
+                        variant="outline-dark"
+                        className="mt-3 w-100"
+                    >
+                        <img
+                            src={googleLogo}
+                            style={{
+                                width: "16px",
+                                marginRight: "5px",
+                                marginBottom: "4px",
+                            }}
+                            alt=""
+                        />
+                        Login With Google
+                    </Button>
+                    <Button
+                        onClick={() => signInWithGithub()}
+                        variant="outline-dark"
+                        className="mt-3 w-100"
+                    >
+                        <img
+                            style={{
+                                width: "16px",
+                                marginRight: "5px",
+                                marginBottom: "4px",
+                            }}
+                            src={gitLogo}
+                            alt=""
+                        />
+                        Login With Github
                     </Button>
                 </Form>
             </div>
