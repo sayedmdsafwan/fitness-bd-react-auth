@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { async } from "@firebase/util";
+import Loading from "../Loading/Loading";
 
 const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] =
@@ -30,6 +31,10 @@ const Register = () => {
         await updateProfile({ displayName: name });
         navigate("/");
     };
+
+    if (loading || updating) {
+        return <Loading />;
+    }
 
     return (
         <div>

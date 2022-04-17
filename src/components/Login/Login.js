@@ -12,6 +12,7 @@ import {
     useSignInWithGithub,
     useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import Loading from "../Loading/Loading";
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
@@ -61,6 +62,10 @@ const Login = () => {
                 <p className="text-danger">Error: {error?.message}</p>
             </div>
         );
+    }
+
+    if (loading || sending) {
+        return <Loading />;
     }
 
     return (
