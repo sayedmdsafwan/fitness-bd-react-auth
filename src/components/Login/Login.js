@@ -108,7 +108,7 @@ const Login = () => {
                     sign up
                 </p>
                 <Button variant="outline-dark" className="w-100" type="submit">
-                    Submit
+                    Login
                 </Button>
                 {errorElement}
                 <hr />

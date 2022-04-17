@@ -80,7 +80,7 @@ const Register = () => {
                         className="w-100"
                         type="submit"
                     >
-                        Submit
+                        SignUp
                     </Button>
                 </Form>
             </div>
