@@ -51,10 +51,6 @@ const Login = () => {
         }
     };
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
-
     let errorElement;
     if (error) {
         errorElement = (
@@ -62,6 +58,10 @@ const Login = () => {
                 <p className="text-danger">Error: {error?.message}</p>
             </div>
         );
+    }
+
+    if (user || userGit || userGoogle) {
+        navigate(from, { replace: true });
     }
 
     if (loading || sending) {
@@ -72,7 +72,7 @@ const Login = () => {
         <div
             className="w-25 py-5 mx-auto"
             style={{
-                height: "80vh",
+                minHeight: "80vh",
             }}
         >
             <h1 className="display-6 text-center mb-3">Login</h1>

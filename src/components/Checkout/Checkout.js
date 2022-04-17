@@ -4,7 +4,7 @@ const Checkout = () => {
     return (
         <div
             style={{
-                height: "80vh",
+                minHeight: "80vh",
             }}
         >
             <h1 className="text-center display-6">This is checkout page</h1>
