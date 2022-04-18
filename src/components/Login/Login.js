@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 import {
     useSendPasswordResetEmail,
     useSignInWithEmailAndPassword,
-    useSignInWithGithub,
     useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import Loading from "../Loading/Loading";
@@ -23,9 +22,6 @@ const Login = () => {
 
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
         useSignInWithGoogle(auth);
-
-    const [signInWithGithub, userGit, loadingGit, errorGit] =
-        useSignInWithGithub(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -60,7 +56,7 @@ const Login = () => {
         );
     }
 
-    if (user || userGit || userGoogle) {
+    if (user || userGoogle) {
         navigate(from, { replace: true });
     }
 
@@ -128,22 +124,6 @@ const Login = () => {
                         alt=""
                     />
                     Login With Google
-                </Button>
-                <Button
-                    onClick={() => signInWithGithub()}
-                    variant="outline-dark"
-                    className="mt-3 w-100"
-                >
-                    <img
-                        style={{
-                            width: "16px",
-                            marginRight: "5px",
-                            marginBottom: "4px",
-                        }}
-                        src={gitLogo}
-                        alt=""
-                    />
-                    Login With Github
                 </Button>
             </Form>
             <ToastContainer />
